@@ -1,3 +1,4 @@
+// Consulta a PokeAPI e trata os erros.
 // script.js
 // Consome a PokeAPI (https://pokeapi.co/) e exibe os dados do Pokémon buscado.
 
@@ -143,3 +144,4 @@ function escapeHTML(texto) {
   div.textContent = texto;
   return div.innerHTML;
 }
+Implementa consulta a API com fetch
