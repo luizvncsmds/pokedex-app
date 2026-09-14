@@ -1,3 +1,4 @@
+/* Estilo do card de resultado */
 /* ---------------------------------------------
    Tokens
 --------------------------------------------- */
@@ -375,3 +376,4 @@ a { color: inherit; }
   .result__stats { grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .device { padding: 16px; }
 }
+Estiliza cartao de resultados
