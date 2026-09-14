@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex — busque um Pokémon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="device">
+
+    <header class="device__header">
+      <span class="device__eye"></span>
+      <div class="device__title">
+        <h1>Pokédex</h1>
+        <p>Digite um nome ou número para consultar</p>
+      </div>
+    </header>
+
+    <form class="search" id="form-busca">
+      <input
+        type="text"
+        id="campo-busca"
+        placeholder="pikachu, 25, charizard…"
+        autocomplete="off"
+        aria-label="Nome ou número do Pokémon"
+      >
+      <button type="submit" id="botao-buscar">Buscar</button>
+    </form>
+
+    <div class="screen" id="resultado">
+      <div class="screen__empty">
+        <p>Nenhuma busca ainda.</p>
+        <p class="screen__hint">Experimente "bulbasaur" ou "6"</p>
+      </div>
+    </div>
+
+    <footer class="device__footer">
+      <p>Dados via <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a></p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
