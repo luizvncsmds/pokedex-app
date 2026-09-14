@@ -1,6 +1,5 @@
-// Consulta a PokeAPI e trata os erros.
 // script.js
-// Consome a PokeAPI (https://pokeapi.co/) e exibe os dados do Pokémon buscado.
+// Consulta a PokeAPI e trata os erros
 
 const form = document.getElementById("form-busca");
 const campoBusca = document.getElementById("campo-busca");
@@ -39,7 +38,6 @@ async function buscarPokemon(termo) {
     }
 
     if (!resposta.ok) {
-      // A API respondeu, mas com algum problema no servidor (5xx, etc.)
       throw new Error(`Erro ${resposta.status}`);
     }
 
@@ -47,7 +45,6 @@ async function buscarPokemon(termo) {
     mostrarResultado(dados);
 
   } catch (erro) {
-    // Cobre falha de rede, CORS, timeout ou API fora do ar
     console.error("Falha ao buscar Pokémon:", erro);
     mostrarErro(
       "Não foi possível consultar a Pokédex agora",
@@ -81,8 +78,8 @@ function mostrarResultado(dados) {
     .map((t) => `<span class="badge type-${t.type.name}">${t.type.name}</span>`)
     .join("");
 
-  const alturaMetros = (dados.height / 10).toFixed(1);   // decímetros -> metros
-  const pesoKg = (dados.weight / 10).toFixed(1);          // hectogramas -> kg
+  const alturaMetros = (dados.height / 10).toFixed(1);
+  const pesoKg = (dados.weight / 10).toFixed(1);
 
   const barrasStats = dados.stats
     .map((s) => {
@@ -138,10 +135,8 @@ function mostrarResultado(dados) {
   `;
 }
 
-// Evita que um nome/erro vindo da API quebre o HTML da página
 function escapeHTML(texto) {
   const div = document.createElement("div");
   div.textContent = texto;
   return div.innerHTML;
 }
-Implementa consulta a API com fetch
